@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Room_Count = props => {
   const tobeShownOptions = props.personType === "Adults" ? [1, 2] : [0, 1, 2];
   const ageRange = props.personType === "Adults" ? "(18+)" : "(0-17)";
@@ -51,8 +53,11 @@ const Room_Count = props => {
   );
 };
 
-// Cust_Select.defaultProps = {
-//   enable: true
-// };
+Room_Count.propTypes = {
+  personType: PropTypes.string.isRequired,
+  enable: PropTypes.bool.isRequired,
+  count: PropTypes.number.isRequired,
+  roomCountHandler: PropTypes.func.isRequired
+};
 
 export default Room_Count;

@@ -1,4 +1,5 @@
 import Room_Count from "./Room_Count";
+import PropTypes from "prop-types";
 
 const Room = props => {
   const checkHandler = e => {
@@ -116,6 +117,12 @@ const Room = props => {
       `}</style>
     </div>
   );
+};
+
+Room.protoTypes = {
+  room: PropTypes.object.isRequired,
+  checkHandler: PropTypes.func.isRequired,
+  roomCountChangeHandler: PropTypes.func.isRequired
 };
 
 export default Room;
