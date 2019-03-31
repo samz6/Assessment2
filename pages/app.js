@@ -1,6 +1,6 @@
-import GTest from "./GTest";
+import Room from "./Room";
 
-class Test extends React.Component {
+class App extends React.Component {
   state = {
     rooms: [
       { id: 1, adults: 1, children: 0 },
@@ -81,7 +81,7 @@ class Test extends React.Component {
         <form id="roomForm" onSubmit={this.submitHandler}>
           <div className="container">
             {rooms.map(room => (
-              <GTest
+              <Room
                 key={room.id}
                 room={room}
                 checkHandler={roomId => this.changehandler.bind(this, roomId)}
@@ -118,4 +118,4 @@ class Test extends React.Component {
   }
 }
 
-export default Test;
+export default App;

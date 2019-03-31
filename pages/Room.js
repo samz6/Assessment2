@@ -1,6 +1,6 @@
-import Test_Select from "./Test_Select";
+import Room_Check from "./Room_Check";
 
-const GTest = props => {
+const Room = props => {
   const checkHandler = e => {
     console.log(e.target.checked);
   };
@@ -43,13 +43,13 @@ const GTest = props => {
         </span>
       </div>
       <div className={activeClasses2.join(" ")}>
-        <Test_Select
+        <Room_Check
           personType="Adults"
           enable={enablePersonAddtion}
           count={props.room.adults}
           roomCountHandler={props.roomCountChangeHandler("adults")}
         />
-        <Test_Select
+        <Room_Check
           personType="Children"
           enable={enablePersonAddtion}
           count={props.room.children}
@@ -118,4 +118,4 @@ const GTest = props => {
   );
 };
 
-export default GTest;
+export default Room;
