@@ -1,4 +1,4 @@
-const Test_Select = props => {
+const Room_Count = props => {
   const tobeShownOptions = props.personType === "Adults" ? [1, 2] : [0, 1, 2];
   const ageRange = props.personType === "Adults" ? "(18+)" : "(0-17)";
   const classes = [];
@@ -55,4 +55,4 @@ const Test_Select = props => {
 //   enable: true
 // };
 
-export default Test_Select;
+export default Room_Count;

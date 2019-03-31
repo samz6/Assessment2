@@ -1,4 +1,4 @@
-import Room_Check from "./Room_Check";
+import Room_Count from "./Room_Count";
 
 const Room = props => {
   const checkHandler = e => {
@@ -43,13 +43,13 @@ const Room = props => {
         </span>
       </div>
       <div className={activeClasses2.join(" ")}>
-        <Room_Check
+        <Room_Count
           personType="Adults"
           enable={enablePersonAddtion}
           count={props.room.adults}
           roomCountHandler={props.roomCountChangeHandler("adults")}
         />
-        <Room_Check
+        <Room_Count
           personType="Children"
           enable={enablePersonAddtion}
           count={props.room.children}
