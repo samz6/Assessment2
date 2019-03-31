@@ -2,10 +2,6 @@ import Room_Count from "./Room_Count";
 import PropTypes from "prop-types";
 
 const Room = props => {
-  const checkHandler = e => {
-    console.log(e.target.checked);
-  };
-
   const enablePersonAddtion =
     props.room.id !== 1 ? props.room.enable : !props.room.enable;
 

@@ -70,7 +70,6 @@ class App extends React.Component {
 
   submitHandler = e => {
     e.preventDefault();
-    console.log(this.state.rooms);
     localStorage.setItem("rooms", JSON.stringify(this.state.rooms));
   };
 
