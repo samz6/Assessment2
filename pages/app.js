@@ -22,35 +22,51 @@ class App extends React.Component {
   }
 
   changehandler = (id, e) => {
-    const rooms = [...this.state.rooms];
+    // const rooms = [...this.state.rooms];
 
+    const { rooms } = this.state;
+    const roomIndex = rooms.findIndex(room => room.id === id);
     if (e.target.checked === true) {
-      const changes = rooms.reduce((c, ch) => {
-        if (ch.id <= id && ch.id !== 1) {
-          const cha = { ...ch };
-          cha.enable = e.target.checked;
-          c.push(cha);
-        } else {
-          c.push(ch);
-        }
-        return c;
-      }, []);
-      this.setState({ rooms: [...changes] });
+      rooms.slice(1, roomIndex + 1).forEach(r => {
+        r.enable = true;
+      });
+      this.setState({ rooms });
     } else {
-      const redos = rooms.reduce((c, ch) => {
-        if (ch.id >= id) {
-          const cha = { ...ch };
-          cha.enable = e.target.checked;
-          cha.adults = 1;
-          cha.children = 0;
-          c.push(cha);
-        } else {
-          c.push(ch);
-        }
-        return c;
-      }, []);
-      this.setState({ rooms: [...redos] });
+      rooms.slice(roomIndex, rooms.length).forEach(r => {
+        r.enable = false;
+        r.adults = 1;
+        r.children = 0;
+      });
+      this.setState({ rooms });
     }
+
+    // if (e.target.checked === true) {
+    //   const changes = rooms.reduce((c, ch) => {
+    //     if (ch.id <= id && ch.id !== 1) {
+    //       const cha = { ...ch };
+    //       cha.enable = e.target.checked;
+    //       c.push(cha);
+    //     } else {
+    //       c.push(ch);
+    //     }
+    //     return c;
+    //   }, []);
+    //   this.setState({ rooms: [...changes] });
+    // } else {
+    //   const redos = rooms.reduce((c, ch) => {
+    //     if (ch.id >= id) {
+    //       const cha = { ...ch };
+    //       cha.enable = e.target.checked;
+    //       cha.adults = 1;
+    //       cha.children = 0;
+    //       c.push(cha);
+    //     } else {
+    //       c.push(ch);
+    //     }
+    //     return c;
+    //   }, []);
+    //   this.setState({ rooms: [...redos] });
+    // }
   };
 
   countHandler = (id, type, e) => {

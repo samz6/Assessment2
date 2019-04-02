@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Enzyme App shows 1`] = `ShallowWrapper {}`;
+
+exports[`With Enzyme Room_Count component should render 1`] = `ShallowWrapper {}`;
